@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package model;
+
+// enum definition
+enum UserGender {
+    UNDEFINED = 0;
+    MALE = 1;
+    FEMALE = 2;
+}
+
+// model definition
+message User {
+    string id = 1;
+    string name = 2;
+    string password = 3;
+    UserGender gender = 4;
+}
+
+message UserList {
+    repeated User list = 1;
+}
+
+option go_package = ".;model";
